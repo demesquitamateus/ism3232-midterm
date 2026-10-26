@@ -6,6 +6,7 @@ from business_rules import (
     needs_signoff,
     total_booked,
     largest_event,
+    format_event_line,
 )
 
 
@@ -111,3 +112,18 @@ def test_largest_event_tie_returns_first_in_list():
 
 def test_largest_event_of_empty_list_is_empty_string():
     assert largest_event([]) == ""
+
+
+def test_format_event_line_shows_no_for_false_values():
+    line = format_event_line("Finch Law", 435.0, False, False)
+    assert line == "Finch Law: $435.00 | sign-off: no | second chef: no"
+
+
+def test_format_event_line_shows_yes_for_true_values():
+    line = format_event_line("Hilltop Gym", 3420.0, True, True)
+    assert line == "Hilltop Gym: $3420.00 | sign-off: yes | second chef: yes"
+
+
+def test_format_event_line_always_has_two_decimals():
+    line = format_event_line("Lumen Labs", 1154.25, False, True)
+    assert line == "Lumen Labs: $1154.25 | sign-off: no | second chef: yes"
