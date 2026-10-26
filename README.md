@@ -6,7 +6,7 @@ The exam requires me to follow the instructions based on the first letter of my 
 
 - **Name:** Mateus De Mesquita
 - **Version:** 1.0
-- **Date:** (the day you finish)
+- **Date:** 10/25/2026
 
 ## What This Program Does
 This program prices catering events for Harvest Table Catering. It applies the company's discount, service fee, sign-off, and second-chef rules to a list of events. It then prints a report with one line per event and a summary of the totals.
